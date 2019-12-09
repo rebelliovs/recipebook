@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Recipes">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/title"
+        android:textColor="#D50000"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/description_instructions"
+        android:textColor="#D50000"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTitle" />
+
+    <TextView
+        android:id="@+id/textIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/ingredients"
+        android:textColor="#D50000"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInstructions" />
+
+    <TextView
+        android:id="@+id/textChanges"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="12dp"
+        android:text="@string/do_you_want_to_make_changes"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#3300C853"
+        android:clickable="false"
+        android:onClick="onSave"
+        android:text="@string/modify_recipe"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnNew"
+        app:layout_constraintEnd_toStartOf="@+id/btnDelete"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="8dp"
+        android:background="#D50000"
+        android:onClick="onDelete"
+        android:text="@string/delete_recipe"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnNew"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnSave" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="240dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:numStars="5"
+        android:rating="1"
+        android:stepSize="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textRating" />
+
+    <EditText
+        android:id="@+id/editTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:ems="15"
+        android:enabled="false"
+        android:hint="@string/recipe_title"
+        android:importantForAutofill="no"
+        android:inputType="textShortMessage|text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <EditText
+        android:id="@+id/editInstructions"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:ems="15"
+        android:enabled="false"
+        android:gravity="start|top"
+        android:hint="@string/recipe_cooking_instructions"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription" />
+
+    <EditText
+        android:id="@+id/editIngredients"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_marginTop="8dp"
+        android:ems="15"
+        android:enabled="false"
+        android:gravity="start|top"
+        android:hint="@string/recipe_ingredients"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textIngredients" />
+
+    <TextView
+        android:id="@+id/textRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="46dp"
+        android:layout_marginLeft="46dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/rating"
+        android:textAllCaps="false"
+        android:textColor="#D50000"
+        android:textSize="20sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editIngredients" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginEnd="36dp"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="8dp"
+        android:background="#FFAB00"
+        android:checked="false"
+        android:text="@string/modify_recipe"
+        android:textColor="#FFFFFF"
+        android:textOff="@string/_no"
+        android:textOn="@string/_yes"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnNew"
+        android:layout_width="342dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        android:background="#00C853"
+        android:onClick="onAdd"
+        android:text="@string/create__new_recipe"
+        android:textColor="#FFFFFF"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

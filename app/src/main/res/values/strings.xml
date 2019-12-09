@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Recipe Book</string>
+    <string name="title_activity_recipes">Recipes</string>
+    <string name="tab_text_1">RECIPE INFO</string>
+    <string name="tab_text_2">NEW RECIPE</string>
+    <string name="sortAZ">A-Z &#8645;</string>
+    <string name="sortRate">1-5 &#8645;</string>
+    <string name="plus">+</string>
+    <string name="ingr">Ingredients</string>
+    <string name="titleIngredients">unique ingredients</string>
+    <string name="rating">Rating</string>
+    <string name="create_recipe">Create recipe</string>
+    <string name="create__new_recipe">Add a new recipe</string>
+    <string name="modify_recipe">Modify recipe</string>
+    <string name="delete_recipe">Delete recipe</string>
+    <string name="ingredients">Ingredients</string>
+    <string name="description_instructions">Description / Instructions</string>
+    <string name="recipe_title">Recipe title</string>
+    <string name="title">Title</string>
+    <string name="recipe_ingredients">Recipe ingredients</string>
+    <string name="recipe_cooking_instructions">Recipe cooking instructions</string>
+    <string name="_0">0</string>
+    <string name="_no">NO</string>
+    <string name="_yes">YES</string>
+    <string name="add">ADD</string>
+    <string name="do_you_want_to_make_changes">Do you want to make changes?</string>
+</resources>
