@@ -48,13 +48,13 @@ public class ContentProvider extends android.content.ContentProvider {
             case 3:
                 return db.query("ingredients", projection, selection, selectionArgs, null, null, sortOrder);
             case 5:
-                String case5 = "SELECT _id, name, instructions, rating FROM recipes UNION SELECT _id, ingredientname FROM ingredients";
+                String case5 = "SELECT recipe_id, ingredient_id FROM recipe_ingredients UNION SELECT _id, ingredientname FROM ingredients";
                 return db.rawQuery(case5, selectionArgs);
             case 6:
-                String case6 = "SELECT _id, name, instructions, rating FROM recipes UNION SELECT _id, ingredientname FROM ingredients WHERE _ID = " + uri.getLastPathSegment();
+                String case6 = "SELECT recipe_id, ingredient_id FROM recipe_ingredients UNION SELECT _id, ingredientname FROM ingredients WHERE _ID = " + uri.getLastPathSegment();
                 return db.rawQuery(case6, selectionArgs);
             case 7:
-                String case7 = "SELECT * FROM recipes UNION SELECT * FROM ingredients";
+                String case7 = "SELECT r._id as recipe_id, r.name, ri.ingredient_id, i.ingredientname FROM recipes r JOIN recipe_ingredients ri ON  (r._id = ri.recipe_id) JOIN ingredients i ON (ri.ingredient_id = i._id) WHERE r._id == ?" + uri.getLastPathSegment();
                 return db.rawQuery(case7, selectionArgs);
             default:
                 return null;
@@ -111,11 +111,11 @@ public class ContentProvider extends android.content.ContentProvider {
 
     @Override
     public int delete(Uri uri,String selection,String[] selectionArgs) {
-        return 0;
+        return dbHelper.getWritableDatabase().delete("recipes", selection, null);
     }
 
     @Override
     public int update(Uri uri,ContentValues values,String selection,String[] selectionArgs) {
-        return 0;
+        return dbHelper.getWritableDatabase().update("recipes", values, selection, null);
     }
 }

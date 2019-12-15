@@ -15,6 +15,14 @@ import android.widget.Spinner;
 
 import java.util.List;
 
+/*
+
+The application has an Activity that lists all recipes
+The list of recipes can be sorted by rating
+
+*/
+
+
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
     //    Button ingredients, sortAZ, sort15;
@@ -78,7 +86,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(MainActivity.this, Recipes.class);
 
-                long _id = cursor.getLong(cursor.getColumnIndex(ContractProvider._ID));
+                String[] _id = {cursor.getString(cursor.getColumnIndex(ContractProvider._ID))};
                 intent.putExtra("id", _id);
                 startActivityForResult(intent, VIEW_REQUEST);
 
@@ -120,8 +128,10 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onResume() {
+
         super.onResume();
         query();
+
     }
 
     public void onIngredients (View v) {

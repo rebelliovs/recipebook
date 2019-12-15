@@ -116,6 +116,7 @@
         android:hint="@string/recipe_ingredients"
         android:importantForAutofill="no"
         android:inputType="textMultiLine"
+        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890\n"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

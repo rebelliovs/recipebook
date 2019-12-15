@@ -7,7 +7,7 @@
     <string name="sortRate">1-5 &#8645;</string>
     <string name="plus">+</string>
     <string name="ingr">Ingredients</string>
-    <string name="titleIngredients">unique ingredients</string>
+    <string name="titleIngredients">List of unique ingredients</string>
     <string name="rating">Rating</string>
     <string name="create_recipe">Create recipe</string>
     <string name="create__new_recipe">Add a new recipe</string>

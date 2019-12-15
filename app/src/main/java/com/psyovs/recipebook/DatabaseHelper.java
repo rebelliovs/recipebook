@@ -31,13 +31,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "CONSTRAINT fk2 FOREIGN KEY (ingredient_id) REFERENCES ingredients (_id)," +
                 "CONSTRAINT _id PRIMARY KEY (recipe_id, ingredient_id) );");
 
-        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe1','Dont burn','5')");
-        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe2','Dont burn2','2')");
-        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe3','Dont burn3','3')");
-
-        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('water')");
-        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('flour')");
-        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('sugar')");
+//        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe1','Dont burn','5')");
+//        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe2','Dont burn2','2')");
+//        db.execSQL("INSERT INTO recipes (name, instructions, rating) VALUES ('Recipe3','Dont burn3','3')");
+//
+//        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('water')");
+//        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('flour')");
+//        db.execSQL("INSERT INTO ingredients (ingredientname) VALUES ('sugar')");
 
 
     }

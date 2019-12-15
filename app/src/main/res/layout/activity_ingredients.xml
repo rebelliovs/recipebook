@@ -20,7 +20,6 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/noIngred"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
@@ -37,27 +36,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/titleIngredients"
         app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/noIngred"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="132dp"
-        android:layout_marginLeft="132dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="6dp"
-        android:layout_marginRight="6dp"
-        android:layout_toStartOf="@+id/titleIngredients"
-        android:layout_toLeftOf="@+id/titleIngredients"
-        android:text="@string/_0"
-        android:textColor="#00B8D4"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="@+id/titleIngredients"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </RelativeLayout>

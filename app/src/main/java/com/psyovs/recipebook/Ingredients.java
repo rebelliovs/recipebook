@@ -2,9 +2,13 @@ package com.psyovs.recipebook;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.database.Cursor;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.SimpleCursorAdapter;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -12,42 +16,42 @@ import org.w3c.dom.Text;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+
+The application has an Activity that lists all unique ingredients
+
+*/
+
 public class Ingredients extends AppCompatActivity {
 
-    private TextView ingredsTotal;
     private ListView list;
+    private SimpleCursorAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ingredients);
 
-        ingredsTotal = (TextView) findViewById(R.id.noIngred);
         list = (ListView) findViewById(R.id.ingredientsList);
 
-        List<String> ingredients = new ArrayList<String>();
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test2");
-        ingredients.add("Test");
-        ingredients.add("Test9");
+        String[] projection = new String[] {
+                ContractProvider._ID,
+                ContractProvider.INGREDIENT
+        };
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1,
-                ingredients);
+        String ingredientsDisplay [] = new String[] {
+                ContractProvider._ID,
+                ContractProvider.INGREDIENT
+        };
+
+        int[] resID = new int[] {
+                R.id.ingrID,
+                R.id.ingrTitle
+        };
+
+        final Cursor cursor = getContentResolver().query(ContractProvider.INGREDIENTS_URI, projection,null, null, ContractProvider._ID);
+
+        adapter = new SimpleCursorAdapter(this, R.layout.ingredients_view, cursor, ingredientsDisplay, resID, 0);
 
         list.setAdapter(adapter);
 
